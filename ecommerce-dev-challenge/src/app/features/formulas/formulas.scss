@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  padding: 2rem 0;
+  background-color: #202331;
+}
+
+.formulas {
+  padding: 0 4rem;
+}
+
+.header {
+  width: max-content;
+  margin: 0 auto 2rem;
+  background-color: rgb(255, 187, 0);
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4rem;
+
+    &__description {
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 800;
+        font-family: 'Inter', sans-serif;
+    }
+
+    &__sub-description {
+        color: #fff;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+        font-family: 'Roboto Mono', monospace;
+        margin-top: 1rem;
+    }
+  h2 {
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.formulas-section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 5%;
+    padding: 0 20%;
+    
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+        
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            font-family: 'Roboto Mono', monospace;
+            color: #fff;
+        }
+    }
+}
+
+.formulas-testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  
+  p{
+    grid-column: 1 / -1;
+    color:rgb(255, 187, 0);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    text-align: center;
+  }
+  &__content {
+    background-color: #F5FEFF;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    
+    .stars {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      
+      &__avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 3px solid #202331;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #202331;
+        flex-shrink: 0;
+      }
+      
+      &__info {
+        h4 {
+          margin: 0;
+          font-size: 1.1rem;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+          color: #202331;
+        }
+        
+        p {
+          margin: 0.25rem 0 0 0;
+          font-size: 0.75rem;
+          font-family: 'Roboto Mono', monospace;
+          font-weight: 300;
+          color: #666;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+}

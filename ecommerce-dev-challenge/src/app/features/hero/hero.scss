@@ -1,0 +1,301 @@
+:host {
+  display: block;
+  background: linear-gradient(135deg, #2E302E 5%, #002657 80%);
+  padding: 4rem;
+  min-height: 80vh; // Gives the hero some breathing room
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; 
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  h1 {
+    font-size: 4rem; // Adjusted slightly for 2-column fit
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.1;
+    width: 100%; // Let the grid column control the width now
+    font-weight: 900;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  button {
+    background-color: rgb(255, 187, 0);
+    color: black;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    text-transform: uppercase;
+    width: auto; // "auto" allows padding to define the size
+    min-width: 200px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #ffd000;
+    }
+  }
+}
+
+.hero-testimonial {
+  margin-top: 3rem;
+  
+  .star-rating {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    
+    i {
+      color: rgb(255, 187, 0);
+      font-size: 1.5rem;
+    }
+  }
+  
+  .testimonial-quote {
+    font-size: 1.1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .author-initials {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      color: #202331;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .author-name {
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  height: 500px;
+
+  img {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+  }
+
+  .product-moisturizer {
+    left: 0;
+    width: 280px;
+    transform: rotate(-20deg);
+    z-index: 3;
+  }
+
+  .product-cleanser {
+    left: 70%;
+    transform: translateX(-50%) rotate(10deg);
+    width: 350px;
+    z-index: 2;
+  }
+
+  .product-stick {
+    right: 0;
+    width: 200px;
+    transform: rotate(-5deg);
+    z-index: 3;
+  }
+}
+
+// Laptop
+@media (max-width: 1024px) {
+  :host {
+    padding: 3rem;
+  }
+
+  .hero {
+    gap: 2.5rem;
+  }
+
+  .hero-text {
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+    }
+  }
+
+  .hero-image {
+    height: 450px;
+
+    .product-moisturizer {
+      width: 240px;
+    }
+
+    .product-cleanser {
+      width: 300px;
+    }
+
+    .product-stick {
+      width: 180px;
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 768px) {
+  :host {
+    padding: 2rem;
+    min-height: auto;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-text {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    button {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      min-width: 180px;
+    }
+  }
+
+  .hero-testimonial {
+    margin-top: 2rem;
+
+    .testimonial-quote {
+      font-size: 1rem;
+    }
+  }
+
+  .hero-image {
+    height: 350px;
+
+    .product-moisturizer {
+      width: 200px;
+    }
+
+    .product-cleanser {
+      width: 250px;
+    }
+
+    .product-stick {
+      width: 150px;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  :host {
+    padding: 1rem;
+  }
+
+  .hero-text {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    button {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+
+  .hero-testimonial {
+    .star-rating i {
+      font-size: 1.2rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+    }
+
+    .testimonial-author {
+      .author-initials {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+      }
+
+      .author-name {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .hero-image {
+    height: 250px;
+
+    .product-moisturizer {
+      width: 140px;
+    }
+
+    .product-cleanser {
+      width: 180px;
+    }
+
+    .product-stick {
+      width: 100px;
+    }
+  }
+}

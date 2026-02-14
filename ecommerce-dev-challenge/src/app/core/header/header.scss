@@ -1,0 +1,121 @@
+:host {
+  display: block;
+  background-color: #f8f9fa;
+  padding: 0 2rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .branding, .actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 3rem;
+  a { text-decoration: none; color: #000; }
+}
+
+.cart-wrapper {
+  position: relative;
+  cursor: pointer;
+
+  .cart-icon {
+    font-size: 2rem;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #2E302E;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+  }
+}
+
+.get-started {
+  font-family: 'Roboto Mono', monospace;
+  background-color: #2E302E;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// Laptop
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .get-started {
+    padding: 0.75rem 1.8rem;
+  }
+}
+
+// Tablet
+@media (max-width: 768px) {
+  :host {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .get-started {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  nav .branding,
+  nav .actions {
+    gap: 1rem;
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .get-started {
+    display: none;
+  }
+
+  .cart-wrapper .cart-icon {
+    font-size: 1.5rem;
+  }
+
+  nav .branding,
+  nav .actions {
+    gap: 0.5rem;
+  }
+}

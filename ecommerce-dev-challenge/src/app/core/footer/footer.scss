@@ -1,0 +1,275 @@
+:host {
+  display: block;
+}
+
+footer {
+  background-color: #202331;
+  color: white;
+  padding: 4rem 0 2rem;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+}
+
+.footer-subscribe {
+  flex: 1;
+
+  h2 {
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+  }
+}
+
+.email-form {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+
+  input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    border-radius: 0;
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 1rem 2.5rem;
+    background: #202331;
+    color: white;
+    border: 2px solid white;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #3a3f48;
+    }
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2E3138;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.footer-logo {
+  h1 {
+    font-size: 5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+  }
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 8rem;
+  margin-bottom: 4rem;
+  justify-content: start;
+}
+
+.footer-column {
+  h3 {
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.copyright {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.disclaimer {
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  p {
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// Laptop
+@media (max-width: 1024px) {
+  footer .container {
+    padding: 0 3rem;
+  }
+
+  .footer-content {
+    gap: 2.5rem;
+  }
+}
+
+// Tablet
+@media (max-width: 768px) {
+  footer .container {
+    padding: 0 2rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+
+    button {
+      padding: 1rem;
+    }
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+// Mobile
+@media (max-width: 480px) {
+  footer {
+    padding: 2rem 0 1rem;
+  }
+
+  footer .container {
+    padding: 0 1rem;
+  }
+
+  .footer-subscribe h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-subscribe .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .email-form input,
+  .email-form button {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+
+  .footer-column h3 {
+    font-size: 1rem;
+  }
+
+  .footer-column a {
+    font-size: 0.9rem;
+  }
+
+  .disclaimer {
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+}

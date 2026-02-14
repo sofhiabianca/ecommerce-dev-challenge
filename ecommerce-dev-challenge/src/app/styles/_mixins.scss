@@ -1,0 +1,144 @@
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $breakpoint-laptop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// Flexbox mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Typography mixins
+@mixin heading-primary {
+  font-family: $font-primary;
+  font-weight: $font-weight-black;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: $color-text-primary;
+}
+
+@mixin body-text {
+  font-family: $font-secondary;
+  font-weight: $font-weight-light;
+  line-height: 1.6;
+}
+
+// Button mixins
+@mixin button-base {
+  border: none;
+  border-radius: $border-radius-lg;
+  padding: $spacing-sm $spacing-lg;
+  font-family: $font-secondary;
+  font-weight: $font-weight-normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform $transition-fast;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $color-accent;
+  color: $color-secondary;
+  
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $color-secondary;
+  color: $color-white;
+  
+  &:hover {
+    background-color: lighten($color-secondary, 10%);
+  }
+}
+
+// Card mixin
+@mixin card {
+  background-color: $color-white;
+  border-radius: $border-radius-2xl;
+  padding: $spacing-xl;
+  box-shadow: $shadow-sm;
+}
+
+// Aspect ratio mixin
+@mixin aspect-ratio($width, $height) {
+  aspect-ratio: $width / $height;
+  
+  @supports not (aspect-ratio: 1) {
+    &::before {
+      content: '';
+      float: left;
+      padding-top: calc(#{$height} / #{$width} * 100%);
+    }
+    
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line clamp
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
